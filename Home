@@ -1,0 +1,49 @@
+import java.util.Arrays;
+
+public class Person {
+    private String fullname;
+    private String position;
+    private String email;
+    private String number;
+    private int salary;
+    private int years;
+
+
+    public Person (String fullname, String position, String email, String number, int salary, int years) {
+        this.fullname = fullname;
+        this.position = position;
+        this.email = email;
+        this.number = number;
+        this.salary = salary;
+        this.years = years;
+    }
+
+    public void println(){
+        System.out.println(this);
+    }
+
+    public static void main(String[] args) {
+        Person[] info = new Person[5];
+        info[0] = new Person("Иванов Иван Иванович ", "Кладовщик ",
+                "java@gmail.com ", "+375293582125" , 15000 , 20);
+        info[1] = new Person("Николов Николай Николаевич ", "Менеджер ",
+                "java@gmail.com ", "+375295484852" , 30000 , 35);
+        info[2] = new Person("Балонов Борис Борисович ", "Директор ",
+                "java@gmail.com ", "+375295855555" , 55500 , 47);
+        info[3] = new Person("Кришнапочик Виктор Михайлович ", "Java-разработчик ",
+                "java@gmail.com ", "+375293721741" , 25540 , 29);
+        info[4] = new Person("Афанасенко Мария Ивановна ", "Крановщик ",
+                "java@gmail.com ", "+375295888756" , 21500 , 41);
+        for (int i = 0; i < info.length; i++) {
+            if (info[i].years > 40){
+                info[i].println();
+            }
+        }
+    }
+
+    public String toString(){
+        return ("Ф.И.О.: " + fullname + "\n" + "Должность: " + position + "\n" + "Email: " + email +
+                "\n" + "Номер телефона: " + number  + "\n" + "Зарплата: " + salary + "\n" + "Возраст: " + years + "\n");
+    }
+
+}
